@@ -9,6 +9,9 @@ body{
 
     font-family: 'Montserrat', sans-serif;
 }
+body.hideScroll{
+    overflow: hidden;
+}
 
 a {
     color: #ff5e84;
@@ -44,8 +47,25 @@ button{
 button:hover{
     text-decoration: underline;
 }
-button.fat:houver{
+.button:houver{
     text-decoration: none;
+    background-color: #0984e3;
+}
+.button{
+    color: white;
+    background: #ff5e84;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 16px #ff5e8432;
 }
 
 #container{
@@ -60,7 +80,7 @@ button.fat:houver{
 }
 #intro{
     width: 300px;
-    margin-right: 20px;
+    margin-right: 64px;
 }
 main{
     margin: 32px 0;
@@ -69,18 +89,7 @@ main{
     display: flex;
     margin-bottom: 32px;
     justify-content: space-evenly;
-    
 }
-.fat{
-    color: white;
-    background: #ff5e84;
-
-    width: 150px;
-    height: 40px;
-    border-radius: 6px;
-    box-shadow: 0px 8px 16px #ff5e8432;
-}
-
 footer{
     text-align: center;
 
@@ -130,17 +139,20 @@ footer a{
 #modal{
     background: #ff5e84;
     
-    position: absolute;
+    position: fixed;
     top: 0;
-
-    width: 100vw;
-    height: 120vh;
-
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
     display: flex;
     justify-content: center;
 }
+#modal.addScroll{
+    overflow: auto;
+}
 #modal .content{
-    margin-top: 128px;
+    margin-top: 5%;
     color: white;
 }
 #modal .content h1{
@@ -152,7 +164,7 @@ footer a{
     width: 80%;
     max-width: 800px;
 
-    margin: 0 auto;
+    margin: 0 auto 15%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -230,4 +242,60 @@ form button:hover{
 }#modal.hide{
     opacity: 0;
     visibility: hidden;
+}
+/* IDEIA.HTML*/
+#page-ideas #container{
+    display: block;
+}
+#page-ideas header{
+    display: flex;
+    justify-content: space-between;
+}
+#page-ideas nav{
+    display: flex;
+    align-items: center;
+}
+#page-ideas  nav li{
+    list-style-type: none;
+
+    margin-right: 16px;
+}
+#page-ideas  nav li a{
+    color: #25282b;
+}
+#page-ideas  nav li a.button{
+    color: white;
+}
+#page-ideas nav li:last-child{
+    margin: 0;
+}
+
+section#title{
+    text-align: center;
+
+}
+section#title p{
+    opacity: 0.7;
+    margin: 0;
+
+}
+section#title h1{
+    margin: 0;
+
+    font-size: 28px;
+}
+section#ideas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+section#ideas .idea{
+    margin: 0;
+}
+section#ideas,
+section#title,
+footer{
+    margin-top: 64px;
 }
